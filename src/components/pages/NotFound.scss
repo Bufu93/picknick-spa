@@ -1,0 +1,15 @@
+.notfound {
+    text-align: center;
+    margin-top: 100px;
+    &__text {
+        font-size: 80px;
+        font-weight: bold;
+        color: #6f8751;
+    }
+    &__link {
+        display: block;
+        padding-top: 32px;
+        font-size: 40px;
+        color: lightblack;
+    }
+}

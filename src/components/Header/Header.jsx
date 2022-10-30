@@ -8,47 +8,31 @@ import SelectLang from '../UI/SelectLang/SelectLang';
 import './Header.scss';
 
 function Header() {
-        const [burgerActive, setBurgerActive] = useState(false);
+    const [burgerActive, setBurgerActive] = useState(false);
 
-        return (
-                <header className="header">
-                        <nav>
-                                <div className="container">
-                                        <div className="navbar">
-                                                <div className="header__left">
-                                                        <Logo
-                                                                classes={'logo'}
-                                                        />
-                                                        <Nav
-                                                                burgerActive={
-                                                                        burgerActive
-                                                                }
-                                                        />
-                                                </div>
-                                                <div className="header__right">
-                                                        <SelectLang />
-                                                        <HeaderCart />
-                                                        <CallButton
-                                                                classes={
-                                                                        'call-btn'
-                                                                }
-                                                        />
-                                                        <Burger
-                                                                burgerActive={
-                                                                        burgerActive
-                                                                }
-                                                                setBurgerActive={() =>
-                                                                        setBurgerActive(
-                                                                                !burgerActive
-                                                                        )
-                                                                }
-                                                        />
-                                                </div>
-                                        </div>
-                                </div>
-                        </nav>
-                </header>
-        );
+    return (
+        <header className="header">
+            <nav>
+                <div className="container">
+                    <div className="navbar">
+                        <div className="header__left">
+                            <Logo classes={'logo'} />
+                            <Nav burgerActive={burgerActive} />
+                        </div>
+                        <div className="header__right">
+                            <SelectLang />
+                            <HeaderCart />
+                            <CallButton classes={'call-btn'} />
+                            <Burger
+                                burgerActive={burgerActive}
+                                setBurgerActive={setBurgerActive}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    );
 }
 
 export default Header;
