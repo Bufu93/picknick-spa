@@ -1,90 +1,67 @@
 .burger {
-        display: none;
-        cursor: pointer;
+    display: none;
+    cursor: pointer;
 }
 
 .menu {
-        display: flex;
+    display: flex;
 
-        // .menu__item
-        &__item {
-                margin-right: 56px;
-                @media (max-width: 992px) {
-                        margin-right: 0;
-                }
-                &::after {
-                        content: '';
-                        display: block;
-                        width: 0;
-                        height: 2px;
-                        background-color: #ff4a9b;
-                        border-radius: 10px;
-                        margin-top: 4px;
-                        transition: all 0.2s;
-                }
-                &:hover::after {
-                        width: 47px;
-                }
-                &:focus::after {
-                        content: '';
-                        display: block;
-                        width: 47px;
-                        height: 2px;
-                        background-color: #ff4a9b;
-                        border-radius: 10px;
-                        margin-top: 4px;
-                        transition: all 0.2s;
-                }
+    // .menu__item
+    &__item {
+        margin-right: 56px;
+        @media (max-width: 992px) {
+            margin-right: 0;
         }
+    }
 
-        // .menu__item-link
-        &__item-link {
-                cursor: pointer;
-                color: #ffffff;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 22px;
-        }
+    // .menu__item-link
+    &__item-link {
+        cursor: pointer;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+    }
 }
 
 @media screen and (max-width: 992px) {
-        // .menu
-        .menu {
-                position: fixed;
-                background: #6f8751;
-                left: 0;
-                top: 0;
-                height: 100vh;
-                width: 100vw;
-                display: none;
+    // .menu
+    .menu {
+        position: fixed;
+        background: #6f8751;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        display: none;
 
-                &.active {
-                        display: flex;
-                        left: 0;
-                        top: 0;
-                        height: 100vh;
-                        width: 100%;
-                        flex-direction: column;
-                        pointer-events: all;
-                        justify-content: flex-start;
-                        padding-top: 60px;
-                        align-items: center;
-                        z-index: 22;
-                        animation: fade 0.1s linear;
-                }
+        &.active {
+            display: flex;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            flex-direction: column;
+            pointer-events: all;
+            justify-content: flex-start;
+            padding-top: 60px;
+            align-items: center;
+            z-index: 22;
+            animation: fade 0.1s linear;
         }
+    }
 
-        // .menu__item
-        .menu__item {
-                margin-bottom: 32px;
-        }
+    // .menu__item
+    .menu__item {
+        margin-bottom: 32px;
+    }
 
-        // .menu__link
-        .menu__item-link {
-                cursor: pointer;
-                color: #ffffff;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 19px;
-        }
+    // .menu__link
+    .menu__item-link {
+        cursor: pointer;
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+    }
 }

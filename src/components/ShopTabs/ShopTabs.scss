@@ -1,0 +1,15 @@
+.shop {
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+.tabs__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    @media (max-width: 992px) {
+        justify-content: space-evenly;
+    }
+    padding-bottom: 80px;
+}

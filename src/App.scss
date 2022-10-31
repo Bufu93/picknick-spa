@@ -195,11 +195,11 @@ body {
     }
 }
 
-// @media (prefers-reduced-motion: no-preference) {
-//     .hero__img img {
-//         animation: App-logo-spin infinite 20s linear;
-//     }
-// }
+@media (prefers-reduced-motion: no-preference) {
+    .hero__img img {
+        animation: App-logo-spin infinite 20s linear, imgo 1.5s;
+    }
+}
 
 @keyframes App-logo-spin {
     from {
@@ -207,6 +207,15 @@ body {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes imgo {
+    from {
+        transform: translate(150%);
+    }
+    to {
+        transform: translate(0%) rotate(387deg);
     }
 }
 

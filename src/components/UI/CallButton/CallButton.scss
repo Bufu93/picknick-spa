@@ -1,21 +1,26 @@
 .call-btn {
-        background: #ffffff;
-        box-shadow: 0px 8px 20px rgba(38, 68, 0, 0.5);
-        border-radius: 60px;
-        padding: 14px 38px;
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 18px;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: #333333;
+    background: #ffffff;
+    box-shadow: 0px 8px 20px rgba(38, 68, 0, 0.5);
+    border-radius: 60px;
+    padding: 14px 38px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #333333;
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
+    &--footer {
         @media screen and (max-width: 992px) {
-                display: none;
+            display: block;
         }
-        &--mob {
-                display: none;
-                @media screen and (max-width: 992px) {
-                        display: block;
-                }
+    }
+    &--mob {
+        display: none;
+        @media screen and (max-width: 992px) {
+            display: block;
         }
+    }
 }

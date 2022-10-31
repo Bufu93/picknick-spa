@@ -1,4 +1,4 @@
-import Nav from '../Nav/Nav';
+import FooterNav from '../FooterNav/FooterNav';
 import CallButton from '../UI/CallButton/CallButton';
 import Logo from '../UI/Logo/Logo';
 import './Footer.scss';
@@ -20,9 +20,9 @@ function Footer() {
         <footer>
             <nav>
                 <div className="container footer__container">
-                    <Logo classes={'logo'} />
-                    <Nav />
-                    <CallButton classes={'call-btn'} />
+                    <Logo classes={'logo logo-footer'} />
+                    <FooterNav />
+                    <CallButton classes={'call-btn call-btn--footer'} />
                 </div>
             </nav>
         </footer>

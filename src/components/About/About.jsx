@@ -3,7 +3,7 @@ import './About.scss';
 
 function About() {
     return (
-        <section className="about">
+        <section id="about" className="about">
             <div className="container">
                 <Title titleclasses={'title-text'} titletext={'О нас'} />
                 <div className="about__wrapper">

@@ -1,7 +1,5 @@
-import './Nav.scss';
-import Logo from '../UI/Logo/Logo';
+import './FooterNav.scss';
 import { Link } from 'react-router-dom';
-import CallButton from '../UI/CallButton/CallButton';
 
 const links = [
     {
@@ -18,14 +16,9 @@ const links = [
     },
 ];
 
-function Nav({ burgerActive }) {
+function FooterNav() {
     return (
-        <ul className={burgerActive ? 'menu active' : 'menu'}>
-            <Logo
-                classes={
-                    burgerActive ? 'logo logo-mob active' : 'logo logo-mob'
-                }
-            />
+        <ul className="footer-nav">
             {links.map(({ link, hashtag }, index) => {
                 return (
                     <li className="menu__item" key={index}>
@@ -38,9 +31,8 @@ function Nav({ burgerActive }) {
                     </li>
                 );
             })}
-            <CallButton classes={'call-btn call-btn--mob'} />
         </ul>
     );
 }
 
-export default Nav;
+export default FooterNav;

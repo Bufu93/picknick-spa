@@ -5,7 +5,17 @@
     padding-top: 16px;
     padding-bottom: 16px;
     @media (max-width: 992px) {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 38px;
+        padding-bottom: 38px;
+        flex-direction: column;
+    }
+}
+
+.logo-footer {
+    @media (max-width: 992px) {
+        margin-right: 0;
+        margin-bottom: 50px;
+        width: 62px;
+        height: 62px;
     }
 }
