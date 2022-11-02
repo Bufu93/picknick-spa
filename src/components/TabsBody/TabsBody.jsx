@@ -9,17 +9,8 @@ function TabsBody({ arr, tabTitle }) {
         >
             <Title titleclasses={'title-text smalltabs'} titletext={tabTitle} />
             <div className="tabs__wrapper">
-                {arr.map(({ title, img, size, price, currency }, index) => {
-                    return (
-                        <TabsBodyCard
-                            key={index}
-                            title={title}
-                            img={img}
-                            size={size}
-                            price={price}
-                            currency={currency}
-                        />
-                    );
+                {arr.map((product) => {
+                    return <TabsBodyCard key={product.id} product={product} />;
                 })}
             </div>
         </div>

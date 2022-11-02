@@ -32,6 +32,10 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product1.png',
+            description:
+                'Блюдо овальное – прочное и удобное в использовании. Подходит для приготовления холодных и горячих блюд, для разогрева в микроволновой печи, для приготовления в духовке разогретой до 180° С, для подачи горячей еды: крем-супов, вторых блюд. Вы можете удобно и безопасно использовать блюдо дома, на пикнике, в баре или даже в ресторане. Поскольку наша посуда изготовлена из чистых отрубей пшеницы, вы можете спокойно съесть её, если хотите.',
+            slides: [{}],
+            id: 1,
         },
         {
             title: 'Блюдо круглое',
@@ -39,6 +43,7 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product2.png',
+            id: 2,
         },
         {
             title: 'Блюдо овальное',
@@ -46,6 +51,7 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product3.png',
+            id: 3,
         },
     ],
     tableware: [
@@ -54,6 +60,7 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product4.png',
+            id: 4,
         },
         {
             title: 'Трубочки для напитков',
@@ -61,6 +68,7 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product5.png',
+            id: 5,
         },
         {
             title: 'Трубочки для напитков',
@@ -68,6 +76,7 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product6.png',
+            id: 6,
         },
     ],
     plates: [
@@ -77,6 +86,7 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product7.png',
+            id: 7,
         },
         {
             title: 'Тарелка',
@@ -84,6 +94,7 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product7.png',
+            id: 8,
         },
         {
             title: 'Тарелка',
@@ -91,6 +102,7 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product7.png',
+            id: 9,
         },
     ],
     bakingDish: [
@@ -99,6 +111,7 @@ const data = {
             price: 300,
             currency: '₴',
             img: 'images/tab-body/product8.png',
+            id: 1,
         },
     ],
 };

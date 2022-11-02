@@ -1,0 +1,26 @@
+.slider-item {
+    background: #f4f4f4;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding: 19px;
+    height: 468px;
+    @media (max-width: 992px) {
+        max-width: 100%;
+    }
+    @media (max-width: 500px) {
+        min-width: 290px;
+        max-height: 290px;
+    }
+
+    &__img {
+        width: 302px;
+        height: 250px;
+        @media (max-width: 500px) {
+            width: 252px;
+            height: 208px;
+        }
+    }
+}

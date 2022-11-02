@@ -1,0 +1,76 @@
+.slick-slider {
+    max-width: 447px;
+    width: 100%;
+}
+.slick-slide {
+    width: 100%;
+}
+.product-slider {
+    position: relative;
+    @media (max-width: 500px) {
+        max-width: 100%;
+        min-width: 290px;
+        max-height: 290px;
+    }
+}
+
+.slider-btns {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+}
+.slider-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 31px;
+    height: 31px;
+    border-radius: 100%;
+    &--prev {
+        transform: rotate(-180deg);
+        margin-right: 10px;
+    }
+    &--next {
+    }
+}
+
+// .slick-arrow {
+//     background-color: #ffffff;
+//     width: 31px;
+//     height: 31px;
+//     transform: translate(0, 0);
+// }
+// .slick-prev {
+//     top: 417px;
+//     left: 368px;
+//     z-index: 2;
+//     &:hover,
+//     &:focus,
+//     &:active {
+//         background-color: #ffffff;
+//     }
+// }
+// .slick-next {
+//     top: initial;
+//     right: 16px;
+//     bottom: 20px;
+//     &:hover,
+//     &:focus,
+//     &:active {
+//         background-color: #ffffff;
+//     }
+// }
+
+// .slick-prev,
+// .slick-next {
+//     border-radius: 100%;
+//     &::before {
+//         font-family: 'sans-serif';
+//         font-size: 10px;
+//         content: '';
+//         color: red;
+//     }
+// }

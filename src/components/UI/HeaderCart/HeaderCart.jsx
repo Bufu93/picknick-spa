@@ -1,17 +1,18 @@
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import cartImg from '../../../img/cart.svg';
 import './HeaderCart.scss';
 
 function HeaderCart() {
-        return (
-                <button className="cart-btn">
-                        <img
-                                src="images/cart.svg"
-                                alt="cart"
-                                width="100%"
-                                height="100%"
-                        />
-                        <div className="cart-btn__count">2</div>
-                </button>
-        );
+    const cart = useSelector((state) => state.cart);
+    return (
+        <Link to="/cart" className="cart-btn">
+            <img src={cartImg} alt="cart" width="100%" height="100%" />
+            {cart.cartItems.length ? (
+                <div className="cart-btn__count">{cart.cartItems.length}</div>
+            ) : null}
+        </Link>
+    );
 }
 
 export default HeaderCart;

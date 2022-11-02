@@ -9,12 +9,14 @@ import Technology from '../Technology/Technology';
 function Home() {
     return (
         <>
-            <Hero />
-            <About />
-            <Advantages />
-            <Technology />
-            <Ecology />
-            <FAQ />
+            <main>
+                <Hero />
+                <About />
+                <Advantages />
+                <Technology />
+                <Ecology />
+                <FAQ />
+            </main>
         </>
     );
 }

@@ -1,19 +1,43 @@
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addToCart } from '../../redux/cartSlice';
+import { setCurrentProduct } from '../../redux/productsSlice';
 import ButtonToCart from '../UI/ButtonToCart/ButtonToCart';
 import './TabsBodyCard.scss';
 
-function TabsBodyCard({ title, img, size, price, currency }) {
+function TabsBodyCard({ product }) {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleClickTopage = () => {
+        dispatch(setCurrentProduct(product));
+        navigate(`/shop/${product.title.toLowerCase()}`);
+    };
+
+    const handleClick = (e) => {
+        e.stopPropagation();
+        dispatch(addToCart(product));
+    };
+
     return (
-        <div className="tabs-card">
+        <div onClick={handleClickTopage} className="tabs-card">
             <div className="tabs-card__img">
-                <img src={img} alt={title} width="100%" height="100%" />
+                <img
+                    src={product.img}
+                    alt={product.title}
+                    width="100%"
+                    height="100%"
+                />
             </div>
-            <p className="tabs-card__title">{title}</p>
-            <span className="tabs-card__size">{size}</span>
+            <p className="tabs-card__title">{product.title}</p>
+            <span className="tabs-card__size">{product.size}</span>
             <div className="tabs-card__wrp">
                 <span className="tabs-card__price">
-                    {price + ' ' + currency}
+                    {product.price + ' ' + product.currency}
                 </span>
-                <ButtonToCart />
+                <ButtonToCart onClick={handleClick} classes={'btn-to-cart'}>
+                    в корзину
+                </ButtonToCart>
             </div>
         </div>
     );

@@ -1,7 +1,11 @@
 import './ButtonToCart.scss';
 
-function ButtonToCart() {
-    return <button className="btn-to-cart">В корзину</button>;
+function ButtonToCart({ onClick, classes, children }) {
+    return (
+        <button onClick={onClick} className={classes}>
+            {children}
+        </button>
+    );
 }
 
 export default ButtonToCart;

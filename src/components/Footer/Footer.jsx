@@ -17,8 +17,8 @@ const links = [
 
 function Footer() {
     return (
-        <footer>
-            <nav>
+        <footer className="footer">
+            <nav className="footer__nav">
                 <div className="container footer__container">
                     <Logo classes={'logo logo-footer'} />
                     <FooterNav />

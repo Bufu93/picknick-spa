@@ -1,0 +1,30 @@
+.counter {
+    display: flex;
+    align-items: center;
+    &__result {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(51, 51, 51, 0.8);
+        color: #6f8751;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    &__btn-wrp {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 10px;
+        border: 2px solid #6f8751;
+        border-radius: 5px;
+    }
+    &__btn {
+        padding: 5px;
+        font-size: 20px;
+        display: flex;
+        color: #6f8751;
+        font-weight: bold;
+        background-color: transparent;
+    }
+}

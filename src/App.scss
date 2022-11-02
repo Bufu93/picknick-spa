@@ -1,5 +1,13 @@
+:root {
+    --toastify-color-success: #6f8751;
+    --toastify-font-family: 'Montserrat', sans-serif;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
+}
+main {
+    min-height: calc(100vh - 284px);
 }
 
 * {
@@ -236,4 +244,10 @@ section {
 }
 .rotate90 {
     transform: rotate(-180deg);
+}
+
+.btn-dis {
+    background-color: white;
+    border: 2px solid #6f8751;
+    color: #6f8751;
 }
