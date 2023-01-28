@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { removeFromCard } from '../../redux/cartSlice';
 import CartProductCounter from '../CartProductCounter/CartProductCounter';
 import './CartProduct.scss';
 
 function CartProduct({ cartItem }) {
+    const { t } = useTranslation();
     const dispatch = useDispatch();
     const removeItemFromCart = (cartItem) => {
         dispatch(removeFromCard(cartItem));
@@ -18,12 +20,16 @@ function CartProduct({ cartItem }) {
                     X
                 </button>
                 <div className="cart-product__title-wrp">
-                    <p className="cart-product__title">{cartItem.title}</p>
-                    <span className="cart-product__size">{cartItem.size}</span>
+                    <p className="cart-product__title">
+                        {`${t(cartItem.title)} x10`}
+                    </p>
+                    <span className="cart-product__size">
+                        {t(cartItem.size)}
+                    </span>
                 </div>
                 <div className="cart-product__price-wrp">
                     <div className="cart-product__price">
-                        {cartItem.price + ' ' + cartItem.currency}
+                        {t(cartItem.price) + ' ' + t('currency')}
                     </div>
                     <div className="cart-product__divader">Х</div>
                     <CartProductCounter cartItem={cartItem} />
@@ -31,9 +37,9 @@ function CartProduct({ cartItem }) {
                         <>
                             <div className="cart-product__divader">=</div>
                             <div className="cart-product__price">
-                                {cartItem.price * cartItem.cartQuantity +
+                                {t(cartItem.price) * cartItem.cartQuantity +
                                     ' ' +
-                                    cartItem.currency}
+                                    t('currency')}
                             </div>
                         </>
                     ) : null}
@@ -43,7 +49,7 @@ function CartProduct({ cartItem }) {
                 <div className="cart-product__img">
                     <img
                         src={cartItem.img}
-                        alt={cartItem.title}
+                        alt={t(cartItem.title)}
                         width="100%"
                         height="100%"
                     />

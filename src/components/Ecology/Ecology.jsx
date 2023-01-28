@@ -1,30 +1,20 @@
 import Title from '../UI/Title/Title';
+import { useTranslation } from 'react-i18next';
 import './Ecology.scss';
 
 function Ecology() {
+    const { t } = useTranslation();
     return (
         <section className="ecology">
             <div className="container">
                 <Title
                     titleclasses={'title-text'}
-                    titletext={'Экологичность'}
+                    titletext={t('ecologyTitle')}
                 />
                 <div className="ecology__wrapper">
                     <div className="ecology__text">
-                        <p>
-                            На фоне глобального загрязнения окружающей среды,
-                            такая посуда, по прогнозам специалистов становится
-                            очень популярна. Состоит из компонентов безопасных
-                            для здоровья, легко утилизируется, не выделяя в
-                            атмосферу токсические вещества.
-                        </p>
-                        <p>
-                            Одноразовая посуда изготовленная из пшеничных
-                            отрубей, является отличной альтернативой любой
-                            одноразовой посуде из бумаги и пластика,
-                            производство которого обременительно для окружающей
-                            среды.
-                        </p>
+                        <p>{t('ecologyText-1')}</p>
+                        <p>{t('ecologyText-2')}</p>
                     </div>
                     <div className="ecology__img">
                         <img

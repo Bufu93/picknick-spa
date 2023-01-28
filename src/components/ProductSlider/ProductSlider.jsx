@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useSelector } from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -6,6 +7,7 @@ import ProductSliderItem from '../ProductSliderItem/ProductSliderItem';
 import './ProductSlider.scss';
 
 function ProductSlider() {
+    const product = useSelector((state) => state.product.currentProduct);
     const slider = useRef();
 
     const next = () => {
@@ -22,15 +24,20 @@ function ProductSlider() {
         slidesToScroll: 1,
         arrows: false,
         fade: true,
+        className: 'prod',
     };
     return (
         <div className="product-slider">
             <Slider ref={(c) => (slider.current = c)} {...settings}>
-                <ProductSliderItem />
-                <ProductSliderItem />
-                <ProductSliderItem />
-                <ProductSliderItem />
-                <ProductSliderItem />
+                {product.slides.map(({ slide }) => {
+                    return (
+                        <ProductSliderItem
+                            key={product.id}
+                            img={slide}
+                            title={product.title}
+                        />
+                    );
+                })}
             </Slider>
             <div className="slider-btns">
                 <button className="slider-btn slider-btn--prev" onClick={next}>
@@ -44,9 +51,9 @@ function ProductSlider() {
                         <path
                             d="M1 16L8 8.5L1 1"
                             stroke="#6F8751"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                     </svg>
                 </button>
@@ -64,9 +71,9 @@ function ProductSlider() {
                         <path
                             d="M1 16L8 8.5L1 1"
                             stroke="#6F8751"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                     </svg>
                 </button>

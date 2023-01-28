@@ -1,26 +1,20 @@
 import Title from '../UI/Title/Title';
 import './Technology.scss';
+import { useTranslation } from 'react-i18next';
 
 function Technology() {
+    const { t } = useTranslation();
     return (
         <section className="technology">
             <div className="container">
-                <Title titleclasses={'title-text'} titletext={'Технология'} />
+                <Title
+                    titleclasses={'title-text'}
+                    titletext={t('technologyTitle')}
+                />
                 <div className="technology__wrapper">
                     <div className="technology__text">
-                        <p>
-                            Экологически чистый процесс производства одноразовой
-                            посуды из отрубей пшеницы основан на натуральном
-                            сырье пшеничных отрубей при небольшом количестве
-                            воды. Остальное высокое давление и температуры.
-                        </p>
-                        <p>
-                            Предлагаемый продукт из возобновляемых,экологически
-                            чистых ресурсов — термоустойчив, безопасный для
-                            детей, практичный и функциональный. Изготовлен
-                            исключительно из съедобных отрубей, содержащих
-                            клетчатку, микроэлементы и витамины.
-                        </p>
+                        <p>{t('technologyText-1')}</p>
+                        <p>{t('technologyText-2')}</p>
                     </div>
                     <div className="technology__img">
                         <img

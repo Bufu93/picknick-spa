@@ -1,28 +1,22 @@
 import Title from '../UI/Title/Title';
+import { useTranslation } from 'react-i18next';
 import './About.scss';
 
 function About() {
+    const { t } = useTranslation();
     return (
         <section id="about" className="about">
             <div className="container">
-                <Title titleclasses={'title-text'} titletext={'О нас'} />
+                <Title
+                    titleclasses={'title-text'}
+                    titletext={t('aboutTitle')}
+                />
                 <div className="about__wrapper">
                     <p>
-                        <span>PickNick Organic</span> — не просто бизнес, но и
-                        ещё работа на добрую идею! Наша команда верит, что мы
-                        делаем мир чуточку чище. Вся продукция произведена из
-                        натуральных материалов. Это значит, что никаких вредных
-                        для организма человека веществ она не выделяет. Более
-                        того наша посуда не загрязняет окружающую среду, период
-                        распада составляет всего <span>30 дней</span>.
+                        <span>PickNick Organic</span> — {t('aboutTextLeft')}
+                        <span>{t('aboutTextLeft-2')}</span>.
                     </p>
-                    <p>
-                        Качество для нас — это не только контроль производства,
-                        но и уверенность в безопасности для здоровья человека и
-                        природы. Мы стараемся подключить как можно больше
-                        компаний, предоставляя им посуду из экологически чистых
-                        материалов.
-                    </p>
+                    <p>{t('aboutTextRight')}</p>
                 </div>
             </div>
         </section>

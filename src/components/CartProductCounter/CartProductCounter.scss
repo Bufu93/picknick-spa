@@ -18,6 +18,9 @@
         gap: 10px;
         border: 2px solid #6f8751;
         border-radius: 5px;
+        @media (max-width: 992px) {
+            padding: 0;
+        }
     }
     &__btn {
         padding: 5px;

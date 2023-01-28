@@ -2,32 +2,30 @@ import { useState } from 'react';
 import Accordion from '../UI/Accordion/Accordion';
 import Title from '../UI/Title/Title';
 import './FAQ.scss';
-
-const faqs = [
-    {
-        question: 'Подойдет ли мне этот курс?(1)',
-        answer: 'На начальных этапах от вас не требуется продвинутых знаний — достаточно школьного курса математики. Однако не пугайтесь, если вам придётся разобраться в темах, которые вы забыли или не проходили — куратор поможет освежить знания или даст полезные ссылки.',
-    },
-    {
-        question: 'Подойдет ли мне этот курс?(2)',
-        answer: 'На начальных этапах от вас не требуется продвинутых знаний — достаточно школьного курса математики. Однако не пугайтесь, если вам придётся разобраться в темах, которые вы забыли или не проходили — куратор поможет освежить знания или даст полезные ссылки.',
-    },
-    {
-        question: 'Подойдет ли мне этот курс?(3)',
-        answer: 'На начальных этапах от вас не требуется продвинутых знаний — достаточно школьного курса математики. Однако не пугайтесь, если вам придётся разобраться в темах, которые вы забыли или не проходили — куратор поможет освежить знания или даст полезные ссылки.',
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 function FAQ() {
-    const [active, setActive] = useState('Подойдет ли мне этот курс?(1)');
+    const { t } = useTranslation();
+    const faqs = [
+        {
+            question: t('FAQquestion-1'),
+            answer: t('FAQanswer-1'),
+        },
+        {
+            question: t('FAQquestion-2'),
+            answer: t('FAQanswer-2'),
+        },
+        {
+            question: t('FAQquestion-3'),
+            answer: t('FAQanswer-3'),
+        },
+    ];
+    const [active, setActive] = useState(faqs[0].question);
 
     return (
         <section className="faq">
             <div className="container faq__container">
-                <Title
-                    titleclasses={'title-text'}
-                    titletext={'Часто задаваемые вопросы'}
-                />
+                <Title titleclasses={'title-text'} titletext={t('FAQTitle')} />
                 <div className="faq__acrd">
                     {faqs.map((f) => {
                         return (

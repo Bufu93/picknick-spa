@@ -10,6 +10,10 @@ import './Header.scss';
 function Header() {
     const [burgerActive, setBurgerActive] = useState(false);
 
+    const closeNav = () => {
+        setBurgerActive(false);
+    };
+
     return (
         <header className="header">
             <nav>
@@ -17,7 +21,10 @@ function Header() {
                     <div className="navbar">
                         <div className="header__left">
                             <Logo classes={'logo'} />
-                            <Nav burgerActive={burgerActive} />
+                            <Nav
+                                burgerActive={burgerActive}
+                                onClick={closeNav}
+                            />
                         </div>
                         <div className="header__right">
                             <SelectLang />

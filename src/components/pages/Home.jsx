@@ -5,6 +5,7 @@ import Ecology from '../Ecology/Ecology';
 import FAQ from '../FAQ/FAQ';
 import Hero from '../Hero/Hero';
 import Technology from '../Technology/Technology';
+import Gallery from '../Gallery/Galley';
 
 function Home() {
     return (
@@ -13,6 +14,7 @@ function Home() {
                 <Hero />
                 <About />
                 <Advantages />
+                <Gallery />
                 <Technology />
                 <Ecology />
                 <FAQ />

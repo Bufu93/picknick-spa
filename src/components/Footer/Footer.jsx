@@ -3,18 +3,6 @@ import CallButton from '../UI/CallButton/CallButton';
 import Logo from '../UI/Logo/Logo';
 import './Footer.scss';
 
-const links = [
-    {
-        link: 'О нас',
-    },
-    {
-        link: 'Магазин',
-    },
-    {
-        link: 'Галерея',
-    },
-];
-
 function Footer() {
     return (
         <footer className="footer">

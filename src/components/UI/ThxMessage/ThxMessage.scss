@@ -1,0 +1,36 @@
+.thxmessage {
+    position: relative;
+    background: #f4f4f4;
+    box-shadow: 0px 10px 20px rgba(75, 85, 62, 0.7);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    &__wrp {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(74, 82, 64, 0.7);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        color: #6f8751;
+        font-size: 20px;
+        background: transparent;
+    }
+    &__title {
+        margin-bottom: 24px;
+        font-size: 24px;
+        color: #6f8751;
+    }
+    &__text {
+        font-size: 16px;
+    }
+}

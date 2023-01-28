@@ -2,23 +2,26 @@ import './Nav.scss';
 import Logo from '../UI/Logo/Logo';
 import { Link } from 'react-router-dom';
 import CallButton from '../UI/CallButton/CallButton';
+import { useTranslation } from 'react-i18next';
 
-const links = [
-    {
-        link: 'О нас',
-        hashtag: '/#about',
-    },
-    {
-        link: 'Магазин',
-        hashtag: '/shop',
-    },
-    {
-        link: 'Галерея',
-        hashtag: '/#galery',
-    },
-];
+function Nav({ burgerActive, onClick }) {
+    const { t } = useTranslation();
 
-function Nav({ burgerActive }) {
+    const links = [
+        {
+            link: t('nav-1'),
+            hashtag: '/#about',
+        },
+        {
+            link: t('nav-2'),
+            hashtag: '/shop',
+        },
+        {
+            link: t('nav-3'),
+            hashtag: '/#gallery',
+        },
+    ];
+
     return (
         <ul className={burgerActive ? 'menu active' : 'menu'}>
             <Logo
@@ -30,6 +33,7 @@ function Nav({ burgerActive }) {
                 return (
                     <li className="menu__item" key={index}>
                         <Link
+                            onClick={onClick}
                             to={hashtag}
                             className="menu__item-link menu__item-link--footer"
                         >

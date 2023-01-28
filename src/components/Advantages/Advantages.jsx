@@ -1,53 +1,58 @@
 import AdvantagesItem from '../AdvantagesItem/AdvantagesItem';
 import Title from '../UI/Title/Title';
 import './Advantages.scss';
-
-const advantages = [
-    {
-        img: 'images/advantages/advantages1.svg',
-        text: 'Безопасная альтернатива одноразовой пластиковой посуде',
-    },
-    {
-        img: 'images/advantages/advantages2.svg',
-        text: 'Производится из пшеничных отрубей',
-    },
-    {
-        img: 'images/advantages/advantages3.svg',
-        text: 'Экологически чистая и безопасная для человека и окружающей среды',
-    },
-];
-
-const subadvantages = [
-    {
-        img: 'images/advantages/subadvantages1.svg',
-        text: 'разогреть пищу в микроволновой печи',
-    },
-    {
-        img: 'images/advantages/subadvantages2.svg',
-        text: 'готовить в духовке, разогретой до 180 С',
-    },
-];
-
-const applicationAreas = [
-    {
-        img: 'images/advantages/application-areas1.svg',
-        text: 'Сервировка для фуршетов',
-    },
-    {
-        img: 'images/advantages/application-areas2.svg',
-        text: 'использование в домашних условиях',
-    },
-    {
-        img: 'images/advantages/application-areas3.svg',
-        text: 'поездки,походы,пикники на природе',
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 function Advantages() {
+    const { t } = useTranslation();
+    const advantages = [
+        {
+            img: 'images/advantages/advantages1.svg',
+            text: t('advantage-1'),
+        },
+        {
+            img: 'images/advantages/advantages2.svg',
+            text: t('advantage-2'),
+        },
+        {
+            img: 'images/advantages/advantages3.svg',
+            text: t('advantage-3'),
+        },
+    ];
+
+    const subadvantages = [
+        {
+            img: 'images/advantages/subadvantages1.svg',
+            text: t('subAdvantage-1'),
+        },
+        {
+            img: 'images/advantages/subadvantages2.svg',
+            text: t('subAdvantage-2'),
+        },
+    ];
+
+    const applicationAreas = [
+        {
+            img: 'images/advantages/application-areas1.svg',
+            text: t('applicationArea-1'),
+        },
+        {
+            img: 'images/advantages/application-areas2.svg',
+            text: t('applicationArea-2'),
+        },
+        {
+            img: 'images/advantages/application-areas3.svg',
+            text: t('applicationArea-3'),
+        },
+    ];
+
     return (
         <section className="advantages">
             <div className="container advantages__container">
-                <Title titleclasses={'title-text'} titletext={'Преимущества'} />
+                <Title
+                    titleclasses={'title-text'}
+                    titletext={t('advantagesTitle')}
+                />
                 <div className="advantages__wrapper">
                     {advantages.map((adv, index) => {
                         return (
@@ -64,7 +69,7 @@ function Advantages() {
                     <div className="advantages__inner">
                         <Title
                             titleclasses={'title-text small'}
-                            titletext={'В такой посуде можно:'}
+                            titletext={t('subAdvantageTitle')}
                         />
                         <div className="advantages__item-wrapper advantages__item-wrapper--first">
                             {subadvantages.map((adv, index) => {
@@ -82,7 +87,7 @@ function Advantages() {
                     <div className="advantages__inner">
                         <Title
                             titleclasses={'title-text small'}
-                            titletext={'Области применения посуды:'}
+                            titletext={t('applicationAreaTitle')}
                         />
                         <div className="advantages__item-wrapper">
                             {applicationAreas.map((adv, index) => {

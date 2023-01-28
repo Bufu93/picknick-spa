@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import { getTotals } from '../../redux/cartSlice';
 import CartArrange from '../CartArrange/CartArrange';
@@ -7,6 +8,7 @@ import Title from '../UI/Title/Title';
 import './Cart.scss';
 
 function Cart() {
+    const { t } = useTranslation();
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
@@ -18,7 +20,10 @@ function Cart() {
         <main>
             <section className="cart">
                 <div className="container">
-                    <Title titletext={'Корзина'} titleclasses={'title-text'} />
+                    <Title
+                        titletext={t('cartTitle')}
+                        titleclasses={'title-text'}
+                    />
                     {cart.cartItems.length ? (
                         cart.cartItems.map((cartItem) => (
                             <CartProduct
@@ -27,17 +32,10 @@ function Cart() {
                             />
                         ))
                     ) : (
-                        <p className="cart0">Корзина пуста</p>
+                        <p className="cart0">{t('cartTitleEmpty')}</p>
                     )}
                     {cart.cartItems.length ? (
-                        <CartArrange
-                            totalprice={cart.cartTotalAmount}
-                            currency={
-                                cart.cartItems.length
-                                    ? cart.cartItems[0].currency
-                                    : ''
-                            }
-                        />
+                        <CartArrange totalprice={cart.cartTotalAmount} />
                     ) : null}
                 </div>
             </section>

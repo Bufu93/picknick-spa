@@ -1,0 +1,61 @@
+.gallery {
+    width: 100%;
+    @media (max-width: 992px) {
+        min-width: 290px;
+        max-width: 550px;
+    }
+    &__item {
+        max-width: 530px;
+        padding-right: 15px;
+        width: 100%;
+        @media (max-width: 992px) {
+            min-width: 290px;
+        }
+    }
+    &__wrapper {
+        width: 100%;
+        @media (max-width: 992px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+.gallery > .slick-list {
+    padding: 15px;
+    @media (max-width: 992px) {
+        padding: 10px;
+    }
+}
+
+.gallery > .slick-prev {
+    background-image: url('../../img/arrow-s.svg');
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 24px;
+    top: 271px;
+    &:before {
+        content: '';
+    }
+}
+.gallery > .slick-next {
+    background-image: url('../../img/arrow-s.svg');
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 24px;
+    transform: rotate(-180deg);
+    top: 262px;
+    &:before {
+        content: '';
+    }
+}
+
+.gallery > .slick-prev:hover,
+.gallery > .slick-prev:focus,
+.gallery > .slick-next:hover,
+.gallery > .slick-next:focus {
+    background-image: url('../../img/arrow-s.svg');
+    color: none;
+    opacity: 1;
+}
