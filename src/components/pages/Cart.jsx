@@ -1,7 +1,5 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
-import { getTotals } from '../../redux/cartSlice';
 import CartArrange from '../CartArrange/CartArrange';
 import CartProduct from '../CartProduct/CartProduct';
 import Title from '../UI/Title/Title';
@@ -10,11 +8,28 @@ import './Cart.scss';
 function Cart() {
     const { t } = useTranslation();
     const cart = useSelector((state) => state.cart);
-    const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getTotals());
-    }, [cart, dispatch]);
+    const getTotals = () => {
+        let { total, quantity } = cart.cartItems.reduce(
+            (cartTotal, cartItem) => {
+                const { price, cartQuantity } = cartItem;
+                const itemTotal = t(price) * cartQuantity;
+
+                cartTotal.total += itemTotal;
+                cartTotal.quantity += cartQuantity;
+
+                return cartTotal;
+            },
+            {
+                total: 0,
+                quantity: 0,
+            }
+        );
+        return {
+            cartTotalQuantity: quantity,
+            cartTotalAmount: total,
+        };
+    };
 
     return (
         <main>
@@ -35,7 +50,7 @@ function Cart() {
                         <p className="cart0">{t('cartTitleEmpty')}</p>
                     )}
                     {cart.cartItems.length ? (
-                        <CartArrange totalprice={cart.cartTotalAmount} />
+                        <CartArrange totalprice={getTotals().cartTotalAmount} />
                     ) : null}
                 </div>
             </section>

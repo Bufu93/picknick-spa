@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 import Nav from '../Nav/Nav';
 import Burger from '../UI/Burger/Burger';
@@ -13,6 +14,15 @@ function Header() {
     const closeNav = () => {
         setBurgerActive(false);
     };
+
+    useEffect(() => {
+        const body = document.querySelector('body');
+        if (burgerActive === true) {
+            body.classList.add('locked');
+        } else {
+            body.classList.remove('locked');
+        }
+    }, [burgerActive]);
 
     return (
         <header className="header">

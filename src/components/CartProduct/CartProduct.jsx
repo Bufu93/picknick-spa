@@ -36,7 +36,7 @@ function CartProduct({ cartItem }) {
                     {cartItem.cartQuantity > 1 ? (
                         <>
                             <div className="cart-product__divader">=</div>
-                            <div className="cart-product__price">
+                            <div className="cart-product__price fin">
                                 {t(cartItem.price) * cartItem.cartQuantity +
                                     ' ' +
                                     t('currency')}
